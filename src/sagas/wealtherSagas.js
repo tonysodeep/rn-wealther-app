@@ -5,10 +5,8 @@ import wealtherApi from '../api/wealtherApi';
 function* fetchWealther(action) {
   try {
     const response = yield wealtherApi.getWelther(action.cityName);
-    console.log(response);
     yield put({type: 'FETCH_SUCCEEDED', receivedWealther: response});
   } catch (e) {
-    console.log('eeror happend');
     yield put({type: 'FETCH_FAILED'});
   }
 }

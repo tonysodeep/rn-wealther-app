@@ -9,15 +9,11 @@ const wealtherReducers = (weatherOject = {}, action) => {
     case FETCH_WEALTHER:
       return {type: 'Loading'};
     case FETCH_SUCCEEDED:
-      console.log(
-        'this is in reducder' + action.receivedWealther.weather[0].icon,
-      );
       return {
         type: 'Success',
         wealtherObjectApi: action.receivedWealther,
       };
     case FETCH_FAILED:
-      console.log('api error');
       return {
         type: 'Failed',
         errorMessage: 'Connection Error',

@@ -19,7 +19,6 @@ const AddWealtherScreen = (props, {navigation}) => {
         <Button
           title="Get Wealther"
           onPress={() => {
-            console.log(cityName);
             props.onFetchWealther(cityName);
           }}
         />
@@ -49,7 +48,6 @@ const AddWealtherScreen = (props, {navigation}) => {
   );
 };
 const renderComponent = (state, action) => {
-  console.log(state.type);
   if (state.type === 'Loading') {
     return (
       <View>
@@ -65,7 +63,6 @@ const renderComponent = (state, action) => {
     );
   }
   if (state.type === 'Success') {
-    console.log('this is in view' + state.wealtherObjectApi.name);
     return (
       <View style={styles.resultContainer}>
         <WealtherItem
